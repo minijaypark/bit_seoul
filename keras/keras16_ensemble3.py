@@ -19,20 +19,16 @@ x1_train, x1_test, x2_train, x2_test, y1_train, y1_test = train_test_split(
 input1 = Input(shape=(3,))
 dense1 = Dense(10, activation='relu')(input1)
 dense1 = Dense(15, activation='relu')(dense1)
-dense1 = Dense(10, activation='relu')(dense1)
-dense1 = Dense(5, activation='relu')(dense1)
 dense1 = Dense(1)(dense1)
 
 input2 = Input(shape=(3,))
 dense2 = Dense(10, activation='relu')(input2)
 dense2 = Dense(15, activation='relu')(dense2)
-dense2 = Dense(10, activation='relu')(dense2)
 dense2 = Dense(1)(dense2)
 
 merge = Concatenate()([input1, input2])
 
 merge = Dense(30)(merge)
-merge = Dense(7)(merge)
 merge = Dense(11)(merge)
 
 # output model branching
